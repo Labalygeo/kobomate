@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.433">
+
+  <meta name="author" content="Labaly TOURE">
+  <title>Un outil libre de collecte de données pour les Sciences Humaines et Sociales</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+
+<br>
+
+  <img class="img" src="images/kobo.png">
+  <p class="title">Un outil libre de collecte de données pour les Sciences Humaines et Sociales</p>
+
+<br>
+
+  <p class="author">Labaly TOURE</p>
+  <p class="institute">Université du Sine Saloum El-hâdj ibrahima NIASS, Sénégal</p>
+
+<br>
+<br>
+
+  <p class="affiliation"><img src="images/logo_PRODIG.png" width="70" style="margin-right:400px;"><img src="images/USSEIN-LOGO-entete-site.png" width="90" style="margin-right:400px;"><img src="images/cist-logo-bleu_sur_blanc.png" width="55"></p>
+
+</section>
+<section id="sommaire" class="slide level2 smaller">
+<h2><strong>Sommaire</strong></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br>
+<br>
+</p>
+<p><img data-src="images/kobo_1.png" class="biglist"></p>
+</div><div class="column" style="width:50%;">
+<div class="bold txtbis">
+<ol type="1">
+<li>KoBo ?<br>
+</li>
+<li>Cas d’usage<br>
+</li>
+<li>Prise en main<br>
+</li>
+</ol>
+</div>
+<div class="biglist blue">
+<ul>
+<li>Création de compte<br>
+</li>
+<li>Saisie de questionnaire<br>
+</li>
+<li>Collecte de données<br>
+</li>
+<li>Gestion &amp; exploration des données</li>
+<li>Export des données collectées</li>
+</ul>
+</div>
+<div class="bold">
+<ol start="4" type="1">
+<li>Limites&nbsp;<br>
+</li>
+<li>Conclusion&nbsp;<br>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="kobo" class="title-slide slide level1 center">
+<h1>KoBo ?</h1>
+
+</section>
+<section id="objectifs-initiaux" class="slide level2 smaller">
+<h2>Objectifs initiaux</h2>
+<p><strong>KoBo est une organisation internationale à but non lucratif. Elle héberge et maintient KoboToolbox, un outil de collecte de données adapté aux contextes difficiles. KoboToolbox est extrêment populaire, cet outil est utilisé par plus de 14 000 organisations à travers le monde. KoboToolbox a été fondée en 2005 par Phuong Pham et Patrick Vinck, aujourd’hui professeurs à l’Université Harvard T.H. École Chan de santé publique.</strong></p>
+<p>Il est développé par la <strong><em>Harvard Humantarian Initiative</em></strong> pour une utilisation facile et fiable dans des contextes de terrain difficiles, tels que les urgences humanitaires ou les environnements post-conflit.</p>
+<div class="center">
+<p><img data-src="images/partenaires.jpg" style="width:65.0%"></p>
+</div>
+</section>
+<section id="public-cible" class="slide level2 smaller">
+<h2>Public cible</h2>
+<p><br>
+</p>
+<ul>
+<li><p><strong>Organisations à but non lucratif</strong> (projets de développement, d’aide humanitaire, de suivi des programmes et de recherche)</p></li>
+<li><p><strong>Agences gouvernementales</strong> (données dans des domaines tels que la santé publique, l’éducation, l’agriculture, la planification urbaine)</p></li>
+<li><p><strong>Institutions de recherche</strong> (chercheur·es et ingénieur·es de différentes disciplines (sociologie, géographie, archéologie, géomatique, démographie, biologie, statistiques, histoire, écologogie, droit, urbaninsme, anthropologie, ect.)</p></li>
+</ul>
+<p>&nbsp;</p>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><br>
+</p>
+<p><span class="bigbis bold">Au dela de la réalisation d’enquêtes classiques, les fonctionnalités de KoBo permettent son utilisation individuelle ou collective, à des fins très variées…</span></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:30%;">
+<p><img data-src="images/utilisation-main.jpg" style="width:55.0%"></p>
+</div>
+</div>
+</section>
+<section id="pourquoi-utiliser-kobo" class="slide level2 smaller">
+<h2>Pourquoi utiliser KoBo ?</h2>
+<div class="columns">
+<p><br>
+</p><div class="column" style="width:60%;">
+<ul>
+<li>Technologie <a href="https://getodk.org/" target="_blank"><strong>ODK</strong></a></li>
+<li>Systéme de <strong>collecte de données numériques</strong></li>
+<li>Collecte par <strong>telephone</strong>, <strong>tablette</strong> ou <strong>ordinateurs</strong></li>
+<li>Collecte de données <strong>quantitatives</strong> &amp; <strong>qualitatives</strong></li>
+<li><strong>Facile d’utilisation</strong></li>
+<li><strong>Gratuit</strong> &amp; <strong>Open Source</strong></li>
+<li><strong>Multi-langues</strong> (14)</li>
+<li>Forte <strong>capacité de stockage</strong></li>
+<li><strong>Collecte online</strong> &amp; <strong>offline</strong></li>
+<li>De <strong>nombreux types de questions</strong> disponibles</li>
+<li>Permet la <strong>collecte collaborative à grande échelle</strong></li>
+<li><strong>Gestion &amp; exploration des données en temps réel</strong></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><br>
+<br>
+<br>
+</p>
+<p><img data-src="images/device.png"></p>
+</div>
+</div>
+</section>
+<section id="kobotoolbox-kobocollect" class="slide level2 smaller">
+<h2>KoboToolbox &amp; KoboCollect</h2>
+<p><br>
+</p>
+<p><strong>KoBo se compose :</strong></p>
+<ul>
+<li>d’une <strong>plateforme en ligne</strong> : <a href="https://kf.KoBotoolBox.org/" target="_blank"><strong>KoboToolbox</strong></a><br>
+</li>
+<li>d’une <strong>application de collecte</strong> de données : <a href="https://play.google.com/store/apps/details?id=org.koboc.collect.android&amp;hl=fr&amp;gl=US" target="_blank"><strong>KoboCollect</strong></a> (ou <a href="https://enketo.org/" target="_blank">Enketo</a> et <a href="https://apps.apple.com/kh/app/gic-collect/id1485932698?l=fr" target="_blank">GIC Collect</a> pour IOS)</li>
+</ul>
+
+<img data-src="images/Kobocollect.jpg" class="r-stretch"></section>
+<section id="respect-de-la-rgpd" class="slide level2 smaller">
+<h2>Respect de la RGPD</h2>
+<div class="center">
+<p><img data-src="images/rgpd.jpeg" style="width:50.0%"></p>
+</div>
+<p><strong>Bien que <a href="https://support.kobotoolbox.org/gdpr.html" target="_blank">KoboToolbox soit présenté comme un outil en parfaite conformité avec la RGDP européenne</a>, vous n’avez pas le contrôle ni la proprièté totale des données si vous utilisez l’instance KoboToolbox mise à disposition…</strong></p>
+<p>Les données collectées et envoyées sur <a href="https://kf.KoBotoolBox.org/" target="_blank">la plateforme KobotToolBox mise à disposition</a> sont hébergés :</p>
+<ul>
+<li>avec <strong>Amazon Web Services (AWS)</strong> ou <strong>Microsoft Azure</strong></li>
+<li>sur des <strong>serveurs localisés aux États-Unis ou dans l’Union européenne</strong></li>
+</ul>
+<p><strong>⚠ La transparence sur le stockage des données collectées n’est pas complète, notamment car l’infrastructure évolue en fonction de l’utilisation.</strong></p>
+<div class="center">
+<p><img data-src="images/server.jpg" style="width:70.0%"></p>
+</div>
+</section>
+<section id="instance-privée" class="slide level2 smaller">
+<h2>Instance privée</h2>
+<p><strong>KoboToolbox est un outil Open source. Pour s’assurer d’avoir la maîtrise totale de vos données, il est possible d’installer son instance KoboToolbox sur son propre serveur.</strong> Cela permet d’avoir son instance personnalisée avec des configurations de sécurité améliorées.</p>
+<p>Bien que la mise en place et la maintenance nécessitent des compétences en informatique. Plusieurs institutions et organsimes ont fait ce choix. Quelques exemples :</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>UNCHR : <a href="https://kobo.unhcr.org" class="uri">https://kobo.unhcr.org</a></li>
+<li>CIRAD : <a href="https://kf.cirad.fr" class="uri">https://kf.cirad.fr</a></li>
+<li>Université de Limoges : <a href="https://kobo.unilim.fr" class="uri">https://kobo.unilim.fr</a></li>
+</ul>
+<p><img data-src="images/cirad.png" style="width:50.0%"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:28%;">
+<p><img data-src="images/UNCHR.png" style="width:90.0%"></p>
+</div><div class="column" style="width:2%;">
+
+</div>
+</div>
+</section></section>
+<section>
+<section id="cas-dusage" class="title-slide slide level1 center">
+<h1>Cas d’usage</h1>
+
+</section>
+<section id="diverses-formes-dutilisation-possibles" class="slide level2 smaller">
+<h2>Diverses formes d’utilisation possibles</h2>
+<p><br>
+</p>
+<div class="columns">
+<div class="column" style="width:59%;">
+<div class="bigbiz">
+<ul>
+<li><strong>Recensement</strong> de population</li>
+<li><strong>Enquête</strong> quantitative et/ou qualitative</li>
+<li><strong>Inventaire</strong> &amp; collection</li>
+<li><strong>Sondage</strong> en ligne</li>
+<li><strong>Carnet de terrain</strong> / Observations</li>
+<li><strong>Cahier</strong> de laboratoire</li>
+<li><strong>Relevés</strong> de terrain</li>
+<li><strong>Relevé</strong> instrumental</li>
+</ul>
+</div>
+</div><div class="column" style="width:41%;">
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</p>
+<p><img data-src="images/photo.jpg"></p>
+</div>
+</div>
+</section>
+<section id="exemples-personnels-appliqués" class="slide level2">
+<h2>Exemples personnels appliqués</h2>
+<p>Dans le domaine de la géographie et de la géomatique</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Elevage</a></li><li><a href="#tabset-1-2">Internet</a></li><li><a href="#tabset-1-3">Espaces ruraux</a></li><li><a href="#tabset-1-4">Foncier</a></li><li><a href="#tabset-1-5">Formation (I)</a></li><li><a href="#tabset-1-6">Formation (II)</a></li><li><a href="#tabset-1-7">Santé</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><strong>Plateforme de suivi des réalisations du projet PRAPS</strong></p>
+<p><img data-src="images/praps%202.jpg"></p>
+</div>
+<div id="tabset-1-2">
+<p><strong>Connectivité des étudiants</strong>.</p>
+<p><img data-src="images/internet.jpg"></p>
+<div class="center">
+<p>Voir le <a href="https://ee.kobotoolbox.org/x/GKiHvleT" target="_blank">formulaire</a></p>
+</div>
+</div>
+<div id="tabset-1-3">
+<p><strong>Cartographie des projets et programmes du secteur rural en Guinée</strong></p>
+<p><img data-src="images/pasag.png"></p>
+<div class="center">
+<p>Voir le <a href="https://ee.KoBotoolBox.org/x/8n6LAaXy" target="_blank">formulaire</a></p>
+</div>
+</div>
+<div id="tabset-1-4">
+<p><strong>Conflits fonciers</strong></p>
+<p><img data-src="images/conflits%20fonciers.jpg"></p>
+<div class="center">
+<p>Voir le <a href="https://ee.KoBotoolBox.org/x/DQ9Jje0M" target="_blank">formulaire</a></p>
+</div>
+</div>
+<div id="tabset-1-5">
+<p><strong>Cartographie des structures de formations professionnelles et techniques du Sénégal</strong></p>
+<p><img data-src="images/FPT.png"></p>
+<div class="center">
+<p>Voir le <a href="https://ee.KoBotoolBox.org/x/GlZTfTgW" target="_blank">formulaire</a></p>
+</div>
+</div>
+<div id="tabset-1-6">
+<p><strong>Cartographie des structures de formation agricole et rurale.</strong></p>
+<p><img data-src="images/warwi.png"></p>
+<div class="center">
+<p>Voir le <a href="https://ee.kobotoolbox.org/x/94cwK1ga" target="_blank">formulaire</a></p>
+</div>
+</div>
+<div id="tabset-1-7">
+<iframe width="990" height="580" src="https://andysouth.shinyapps.io/senegal_healthsites_collection" title="Healthsites"></iframe>
+<div class="center">
+<p><a href="https://healthsites.io/map">https://healthsites.io/map</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="autres-exemples-dutilisation" class="slide level2">
+<h2>Autres exemples d’utilisation</h2>
+<div class="bigbis">
+<ul>
+<li><strong>Enquête nationnale</strong> (Sénégal, Burkina Faso, Mali…)</li>
+<li><strong>Enquête internationnale</strong> (agence des Nations Unies pour les réfugiés)</li>
+</ul>
+<div class="center">
+<p><img data-src="images/exemple_collect.jpg" style="width:50.0%"></p>
+</div>
+<ul>
+<li><strong>Sondage</strong> en ligne (toute thématique)</li>
+<li><strong>Relevés et notes</strong> personnels de terrain</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="prise-en-main" class="title-slide slide level1 center">
+<h1>Prise en main</h1>
+
+</section>
+<section id="deux-outils-pour-une-enquête" class="slide level2">
+<h2>Deux outils pour une enquête</h2>
+<p><br>
+</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="bigbis">
+<p><strong>Plateforme web (Kobotoolbox)</strong><br>
+</p>
+</div>
+<div class="big5">
+<ul>
+<li>Création, modification et déploiement des formulaires<br>
+</li>
+<li>Suivi et contrôle de la collecte, gestion des droits<br>
+</li>
+<li>Stockage, Vérification, modification des données collectées<br>
+</li>
+<li>Exploration et visualisation des données<br>
+</li>
+<li>Export des données (Excel, JSON, KML…)</li>
+</ul>
+</div>
+</div><div class="column" style="width:45%;">
+<p><br>
+</p>
+<div class="center">
+<p><img data-src="images/KoboTools.jpg" style="width:80.0%"></p>
+</div>
+</div>
+</div>
+<div class="bigbis">
+<p><strong>Application de collecte (KoboCollect, Enketo, GIC collect, page web)</strong><br>
+</p>
+</div>
+<div class="big5">
+<ul>
+<li>Téléchargement des formulaires d’enquêtes<br>
+</li>
+<li>Saisie des données via téléphone, tablette ou ordinateur<br>
+</li>
+<li>Sauvergarde des réponses saisies sur l’appareil<br>
+</li>
+<li>Envoi maitrisé des réponses sur le serveur KoBotoolBox</li>
+</ul>
+</div>
+</section>
+<section id="création-de-compte-kobotoolbox" class="slide level2">
+<h2>1. Création de compte Kobotoolbox</h2>
+<p>Pour utiliser KoBotoolBox, commencez par <strong>créer un compte : <a href="http://www.KoBotoolBox.org" target="_blank">http://www.KoBotoolBox.org</a></strong></p>
+<p>Cliquez sur <strong><em>Create an account</em></strong>.</p>
+
+<img data-src="images/create.jpg" class="r-stretch"></section>
+<section id="création-de-compte" class="slide level2">
+<h2>1. Création de compte</h2>
+<p><strong>Renseignez les informations</strong> demandées :</p>
+
+<img data-src="images/champs.jpg" class="r-stretch"></section>
+<section id="création-de-compte-1" class="slide level2">
+<h2>1. Création de compte</h2>
+<p>Vous recevrez un email qui vous permettra d’<strong>activer votre compte</strong>.</p>
+
+<img data-src="images/activate.jpg" class="r-stretch"></section>
+<section id="création-du-formulaire" class="slide level2">
+<h2>2. Création du formulaire</h2>
+<p><br>
+</p>
+<div class="bigbis">
+<p><strong>Depuis votre compte KoboToolbox :</strong></p>
+</div>
+<p><br>
+</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>A. Cliquez sur <strong><em>NEW</em></strong> pour créer un questionnaire</p>
+<p><img data-src="images/2a.jpg" width="498"></p>
+</div><div class="column" style="width:50%;">
+<p>B. Renseignez les informations générales</p>
+<p><img data-src="images/3a.jpg" width="465"></p>
+</div>
+</div>
+</section>
+<section id="ajout-dune-question" class="slide level2">
+<h2>3. Ajout d’une question</h2>
+<p><strong>Cliquez sur le signe + pour ajouter votre première question :</strong></p>
+<p><img data-src="images/5a.jpg"></p>
+<p><strong>Définissez le type de question souhaité :</strong></p>
+<p><img data-src="images/7a.jpg"></p>
+</section>
+<section id="ajout-dune-question-1" class="slide level2">
+<h2>3. Ajout d’une question</h2>
+<p><strong>De nombreux <a href="https://support.KoBotoolBox.org/question_types.html" target="_blank">types de question</a> disponibles :</strong></p>
+
+<img data-src="images/questions.jpg" class="r-stretch"><div class="center">
+<p>Voir un <a href="https://enke.to/x/widgets" target="_blank">formulaire exemple</a></p>
+</div>
+</section>
+<section id="création-du-questionnaire-via-xls-form" class="slide level2">
+<h2>4. Création du questionnaire via XLS form</h2>
+<iframe width="990" height="580" src="https://docs.google.com/spreadsheets/d/1JYH0ca-piUKepoq-DXjVl5qLTUVM18ZY/edit#gid=716438668" title="xlsform"></iframe>
+</section>
+<section id="déploiement-du-formulaire-page-web" class="slide level2">
+<h2>5. Déploiement du formulaire (page web)</h2>
+<p>Une fois le questionaire saisi et validé, <strong>il doit être déployé pour activer la phase de collecte</strong>.<br>
+<strong>Un lien sera automatiquement créé.</strong></p>
+<p><img data-src="images/deploy.jpg"> <img data-src="images/link.jpg"></p>
+</section>
+<section id="déploiement-sur-smartphone" class="slide level2">
+<h2>6. Déploiement sur smartphone</h2>
+<p>Possibilité de télécharger le questionnaire dans l’application koboCollect, Enketo ou GIC collect.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center">
+<p><img data-src="images/smartphone2.png" style="width:60.0%"></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center">
+<p><img data-src="images/smartphone.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="administration-de-la-collecte" class="slide level2">
+<h2>7. Administration de la collecte</h2>
+<ul>
+<li><strong>Multi-administrateurs</strong></li>
+<li><strong>Supervision des collecteurs</strong></li>
+<li><strong>Contrôle des données</strong> collectées</li>
+</ul>
+<div class="center">
+<p><img data-src="images/admin.jpg"> <img data-src="images/edit.jpg"></p>
+</div>
+</section>
+<section id="exploration-des-données-collectées" class="slide level2">
+<h2>8. Exploration des données collectées</h2>
+<p>Des <strong>outils d’exploration et de visualisation</strong> des données collectées.</p>
+<p><img data-src="images/viz.jpg"> <img data-src="images/graphique.jpg"></p>
+</section>
+<section id="export-des-données" class="slide level2">
+<h2>9. Export des données</h2>
+<p><strong>Plusieurs formats d’export</strong> disponibles.</p>
+
+<img data-src="images/format%20d'export.jpg" class="r-stretch"></section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<div class="bigbis" style="margin-top:35px;">
+<p><strong>Limites :</strong></p>
+</div>
+<div class="big5">
+<ul>
+<li><strong>Plus orienté enquête quantitative</strong> que qualitative<br>
+</li>
+<li>Pas adapté à tous les types d’enquête (ex : longitudinale)<br>
+</li>
+<li><strong>Nombre de soumissions limitées</strong> (5000/mois max)<br>
+</li>
+<li>Respect de la RGPD mais <strong>pas de contrôle totale des données</strong><br>
+</li>
+</ul>
+</div>
+<div class="bigbis" style="margin-top:35px;">
+<p><strong>Point forts :</strong></p>
+</div>
+<div class="big5">
+<ul>
+<li><strong>Gratuit</strong> et <strong>Open Source</strong></li>
+<li><strong>Eventail très large des fonctionnalités</strong></li>
+<li>Optimisé pour la <strong>collecte collaborative à grande échelle</strong></li>
+<li>Possibilité d’<strong>installer sa propre instance</strong></li>
+<li>Collecte rapide et de manière fiable des données sur <strong>Android</strong>, <strong>iOS</strong> et de nombreux autres appareils, <strong>en ligne ou hors ligne</strong>, avec une logique de renvoi complexe.</li>
+</ul>
+</div>
+</section>
+<section id="ressources-utiles" class="slide level2">
+<h2>Ressources utiles</h2>
+<p><br>
+</p>
+<div class="txt6">
+<ul>
+<li><a href="https://www.KoBotoolBox.org" target="_blank">https://www.KoBotoolBox.org</a></li>
+<li><a href="https://community.KoBotoolBox.org" target="_blank">https://community.KoBotoolBox.org</a></li>
+<li><a href="https://support.KoBotoolBox.org" target="_blank">https://support.KoBotoolBox.org</a><br>
+</li>
+<li><a href="https://docs.google.com/presentation/d/1vJMWBBcMNlnQP1dUa7WsTuA4mSwifgEnj-TtjGwmcuY/htmlpresent" target="_blank">https://docs.google.com/presentation/d/1vJMWBBcMNlnQP1dUa7WsTuA4mSwifgEnj-TtjGwmcuY/htmlpresent</a></li>
+<li><a href="https://cartong.pages.gitlab.cartong.org/learning-corner/fr/8_managing_mdc/8_2_tool_focus/8_2_4_correction" target="_blank">https://cartong.pages.gitlab.cartong.org/learning-corner/fr/8_managing_mdc/8_2_tool_focus/8_2_4_correction</a></li>
+</ul>
+</div>
+</section>
+<section id="remerciements" class="slide level2">
+<h2>Remerciements</h2>
+<p><br>
+</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="center">
+<p><img data-src="images/geoteca.png" style="width:55.0%"></p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="center">
+<div class="columns">
+<div class="column" style="width:5%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/logoPRODIG.png" style="width:90.0%"></p>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:30%;">
+<p><img data-src="images/cist-logo-bleu_sur_blanc.png" style="width:100.0%"></p>
+</div><div class="column" style="width:20%;">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="center">
+<p><img data-src="images/USSEIN-LOGO-entete-site.png" style="width:35.0%"></p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="center">
+<p><br>
+</p>
+<p><strong>Hugues Pecout</strong></p>
+<div class="columns">
+<div class="column" style="width:20%;">
+
+</div><div class="column" style="width:20%;">
+<p><img data-src="images/cnrs.png" style="width:90.0%"></p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:20%;">
+<p><img data-src="images/geographie-cites_logo.png" style="width:90.0%"></p>
+</div><div class="column" style="width:20%;">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><img src="images/geoteca.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Midi de Géotéca - KoBotoolBox, un outil libre de collecte de données pour les SHS</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copié");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copié");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
