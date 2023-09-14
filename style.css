@@ -1,6 +1,6 @@
 
 .title { 
-  font-size: 160%;
+  font-size: 220%;
   font-weight: bold;
   color: #E2E2E2;
 }
@@ -32,7 +32,7 @@
 }
 
 .smaller{
-  font-size:50px;
+  font-size:220%;
 }
 
 .xsmallgrey{
@@ -64,7 +64,7 @@
 
 .biglist{
   padding-left:40px;
-  font-size: 60%;
+  font-size: 80%;
 }
 
 .big22{
@@ -74,6 +74,10 @@
 
 .big3{
   font-size: 105%;
+}
+
+.big33{
+  font-size: 140%;
 }
 
 .bigbis{
@@ -289,6 +293,17 @@ text-align:center;
 .txt3{
   font-size: 65%;
   line-height: 1;
+}
+
+
+.tt{
+  font-size: 100%;
+}
+
+
+.txt66{
+  font-size: 105%;
+  line-height: 2;
 }
 
 .txt6{
