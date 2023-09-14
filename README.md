@@ -1,3 +1,7 @@
-https://labalygeo.github.io/kobo/
+## Tuto@Mate
+
+### KoboToolBox : un outil libre de collecte de données pour les Sciences Humaines et Sociales
+
+Consulter le [diaporama](https://labalygeo.github.io/kobomate/)
  
-Hugues & Labaly
+Labaly TOURE
