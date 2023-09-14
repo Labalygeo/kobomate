@@ -8,7 +8,7 @@ lang: fr
 format:
   revealjs: 
     template-partials:
-      - title-slide.html
+      - title-slide2.html
     theme: [dark, theme_rouge.scss]
     logo: images/logo_mate_shs_0.png
     footer: "Tuto@MATE - KoBotoolBox, un outil libre de collecte de données pour les SHS"
@@ -19,7 +19,7 @@ format:
     transition: fade
     transition-speed: fast
     menu: TRUE
-    css: style.css
+    css: style2.css
 editor: visual
 ---
 
@@ -96,7 +96,6 @@ Il est développé par la ***Harvard Humantarian Initiative*** pour une utilisat
 ## Pourquoi utiliser KoBo ? {.smaller}
 
 ::: columns
-
 \
 
 ::: {.column width="60%"}
@@ -214,29 +213,23 @@ Bien que la mise en place et la maintenance nécessitent des compétences en inf
 
 ## Exemples personnels appliqués
 
-
-1. **Plateforme de suivi des réalisations du projet PRAPS**
+1.  **Plateforme de suivi des réalisations du projet PRAPS**
 
 ::: center
 ![](images/praps%202.jpg){width="65%"}
 :::
 
-
 ## Exemples personnels appliqués
 
-2. **Connectivité des étudiants** ([formulaire](https://ee.kobotoolbox.org/x/GKiHvleT){target="_blank"}) 
+2.  **Connectivité des étudiants** ([formulaire](https://ee.kobotoolbox.org/x/GKiHvleT){target="_blank"})
 
 ::: center
 ![](images/internet.jpg){width="75%"}
- 
-
 :::
 
 ## Exemples personnels appliqués
 
-
-3. **Cartographie des projets et programmes du secteur rural en Guinée** ([formulaire](https://ee.KoBotoolBox.org/x/8n6LAaXy){target="_blank"}) 
-
+3.  **Cartographie des projets et programmes du secteur rural en Guinée** ([formulaire](https://ee.KoBotoolBox.org/x/8n6LAaXy){target="_blank"})
 
 ::: center
 ![](images/pasag.png){width="100%"}
@@ -244,18 +237,15 @@ Bien que la mise en place et la maintenance nécessitent des compétences en inf
 
 ## Exemples personnels appliqués
 
-
-4. **Conflits fonciers** ([formulaire](https://ee.KoBotoolBox.org/x/DQ9Jje0M){target="_blank"})
+4.  **Conflits fonciers** ([formulaire](https://ee.KoBotoolBox.org/x/DQ9Jje0M){target="_blank"})
 
 ::: center
 ![](images/conflits%20fonciers.jpg){width="75%"}
-
 :::
 
 ## Exemples personnels appliqués
 
-
-5. **Cartographie des structures de formations professionnelles et techniques du Sénégal** ([formulaire](https://ee.KoBotoolBox.org/x/GlZTfTgW){target="_blank"}) 
+5.  **Cartographie des structures de formations professionnelles et techniques du Sénégal** ([formulaire](https://ee.KoBotoolBox.org/x/GlZTfTgW){target="_blank"})
 
 ::: center
 ![](images/FPT.png){width="80%"}
@@ -263,35 +253,38 @@ Bien que la mise en place et la maintenance nécessitent des compétences en inf
 
 ## Exemples personnels appliqués
 
-
-6. **Cartographie des structures de formation agricole et rurale.** ([formulaire](https://ee.kobotoolbox.org/x/94cwK1ga){target="_blank"}) 
+6.  **Cartographie des structures de formation agricole et rurale.** ([formulaire](https://ee.kobotoolbox.org/x/94cwK1ga){target="_blank"})
 
 ::: center
 ![](images/warwi.png){width="75%"}
-
 :::
 
 ## Exemples personnels appliqués
 
-7. Projet **HOTOSM 2020 - Sites de santé au Sénégal** ([https://healthsites.io/map](https://healthsites.io/map))
+7.  Projet **HOTOSM 2020 - Sites de santé au Sénégal** (<https://healthsites.io/map>)
 
 ::: center
 ![](images/andysouth.png){width="85%"}
 :::
 
-
 <!-- ## Autres exemples d'utilisation -->
 
 <!-- ::: bigbis -->
+
 <!-- -   **Enquête nationnale** (Sénégal, Burkina Faso, Mali...) -->
+
 <!-- -   **Enquête internationnale** (agence des Nations Unies pour les réfugiés) -->
 
 <!-- ::: center -->
+
 <!-- ![](images/exemple_collect.jpg){width="50%"} -->
+
 <!-- ::: -->
 
 <!-- -   **Sondage** en ligne (toute thématique) -->
+
 <!-- -   **Relevés et notes** personnels de terrain -->
+
 <!-- ::: -->
 
 # Prise en main
@@ -353,9 +346,7 @@ Cliquez sur ***Create an account***.
 
 Vous recevrez un email qui vous permettra d'**activer votre compte**.
 
-:::
-![](images/activate.jpg){width="65%"}
-:::
+::: ![](images/activate.jpg){width="65%"} :::
 
 ## 2. Création du formulaire
 
@@ -420,7 +411,6 @@ Une fois le questionaire saisi et validé, **il doit être déployé pour active
 ![](images/link.jpg){width="85%"}
 :::
 
-
 ## 6. Déploiement sur smartphone
 
 Possibilité de télécharger le questionnaire dans l'application koboCollect, Enketo ou GIC collect.
@@ -449,14 +439,11 @@ Possibilité de télécharger le questionnaire dans l'application koboCollect, E
 ![](images/admin.jpg){width="80%"}
 :::
 
-
-
 ## 7. Administration de la collecte
 
 ::: center
 ![](images/edit.jpg){width="100%"}
 :::
-
 
 ## 8. Exploration des données collectées
 
@@ -509,7 +496,7 @@ Des **outils d'exploration et de visualisation** des données collectées.
 
 \
 
-[Officielles :]{.bigbis .bold} 
+[Officielles :]{.bigbis .bold}
 
 ::: txt6
 -   [https://www.KoBotoolBox.org](https://www.KoBotoolBox.org){target="_blank"}
@@ -519,7 +506,7 @@ Des **outils d'exploration et de visualisation** des données collectées.
 
 \
 
-[Autres :]{.bigbis .bold} 
+[Autres :]{.bigbis .bold}
 
 ::: txt6
 -   [Guide de formation KoBoToolbox](https://docs.google.com/presentation/d/1vJMWBBcMNlnQP1dUa7WsTuA4mSwifgEnj-TtjGwmcuY/htmlpresent){target="_blank"}

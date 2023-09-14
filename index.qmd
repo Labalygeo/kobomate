@@ -164,14 +164,14 @@ Bien que la mise en place et la maintenance nécessitent des compétences en inf
 -   CIRAD : <https://kf.cirad.fr>
 -   Université de Limoges : <https://kobo.unilim.fr>
 
-![](images/cirad.png){width="50%"}
+![](images/cirad.png){width="40%"}
 :::
 
 ::: {.column width="5%"}
 :::
 
 ::: {.column width="28%"}
-![](images/UNCHR.png){width="90%"}
+![](images/UNCHR.png){width="75%"}
 :::
 
 ::: {.column width="2%"}
@@ -283,15 +283,21 @@ Voir le [formulaire](https://ee.kobotoolbox.org/x/94cwK1ga){target="_blank"}
 <!-- ## Autres exemples d'utilisation -->
 
 <!-- ::: bigbis -->
+
 <!-- -   **Enquête nationnale** (Sénégal, Burkina Faso, Mali...) -->
+
 <!-- -   **Enquête internationnale** (agence des Nations Unies pour les réfugiés) -->
 
 <!-- ::: center -->
+
 <!-- ![](images/exemple_collect.jpg){width="50%"} -->
+
 <!-- ::: -->
 
 <!-- -   **Sondage** en ligne (toute thématique) -->
+
 <!-- -   **Relevés et notes** personnels de terrain -->
+
 <!-- ::: -->
 
 # Prise en main
@@ -424,7 +430,7 @@ Possibilité de télécharger le questionnaire dans l'application koboCollect, E
 
 ::: {.column width="50%"}
 ::: center
-![](images/smartphone.png)
+![](images/zoom.png)
 :::
 :::
 :::
@@ -480,7 +486,7 @@ Des **outils d'exploration et de visualisation** des données collectées.
 
 \
 
-[Officielles :]{.bigbis .bold} 
+[Officielles :]{.bigbis .bold}
 
 ::: txt6
 -   [https://www.KoBotoolBox.org](https://www.KoBotoolBox.org){target="_blank"}
@@ -490,7 +496,7 @@ Des **outils d'exploration et de visualisation** des données collectées.
 
 \
 
-[Autres :]{.bigbis .bold} 
+[Autres :]{.bigbis .bold}
 
 ::: txt6
 -   [Guide de formation KoBoToolbox](https://docs.google.com/presentation/d/1vJMWBBcMNlnQP1dUa7WsTuA4mSwifgEnj-TtjGwmcuY/htmlpresent){target="_blank"}
