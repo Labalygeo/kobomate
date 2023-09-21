@@ -508,8 +508,8 @@ Des **outils d'exploration et de visualisation** des données collectées.
 \
 
 
-::: {.center}
-[**Merci de votre attention**]{.bigcinq}
+::: {.bigcinq}
+**Merci de votre attention**
 :::
 
 \
