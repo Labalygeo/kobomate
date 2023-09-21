@@ -503,6 +503,37 @@ Des **outils d'exploration et de visualisation** des données collectées.
 -   [Manuel CartONG](https://cartong.pages.gitlab.cartong.org/learning-corner/fr/8_managing_mdc/8_2_tool_focus_page){target="_blank"}
 :::
 
+## 
+
+\
+
+
+::: {.center}
+[**Merci de votre attention**]{.bigcinq}
+:::
+
+\
+\
+\
+
+::: center2
+[[labaly.toure@ussein.edu.sn](mailto:labaly.toure@ussein.edu.sn)]{.bigbis2}
+
+[<img src="images/twitter.png" width="60" style="margin-top:15px;margin-bottom:-10px;margin-right:12px;"/>](https://twitter.com/ToureLabaly)@ToureLabaly
+
+[<img src="images/github.png" width="35" style="margin-top:15px;margin-bottom:-10px;margin-right:7px;"/>](https://labalygeo.github.io/) labalygeo
+
+
+\
+\
+\
+\
+
+**Diaporama** :  [https://labalygeo.github.io/kobomate/](https://labalygeo.github.io/kobomate/)    
+**Code source** : [https://github.com/Labalygeo/kobomate](https://github.com/Labalygeo/kobomate)   
+
+:::
+
 ## Remerciements
 
 \
